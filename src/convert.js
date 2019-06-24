@@ -1,4 +1,5 @@
 const sharp = require('sharp');
+const debug = require('./debug');
 
 /**
  *
@@ -11,6 +12,7 @@ const convertToPNG = async (svgs, { size }) => {
     const { svg, name } = svgs[index];
     const buffer = Buffer.from(svg);
     const out = `./${ name }.png`;
+    debug('converting', name);
     await sharp(buffer) // eslint-disable-line no-await-in-loop
       .resize(size, size)
       .png()
