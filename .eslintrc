@@ -1,0 +1,22 @@
+{
+  "env": {
+    "node": true
+  },
+  "plugins": [],
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "comma-dangle": [0],
+    "camelcase": [0],
+    "max-len": [ "warn", { "code": 120 } ],
+    "template-curly-spacing": ["warn", "always"]
+  }
+}

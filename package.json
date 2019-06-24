@@ -1,0 +1,23 @@
+{
+  "name": "svg-to-png",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "sharp": "^0.22.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "debug": "^4.1.1",
+    "eslint": "^6.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}
