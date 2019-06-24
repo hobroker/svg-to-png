@@ -1,5 +1,5 @@
 const fs = require('fs');
-const debug = require('./debug');
+const debug = require('debug')('read');
 
 /**
  *

@@ -1,6 +1,7 @@
 const sharp = require('sharp');
 const path = require('path');
-const debug = require('./debug');
+const debug = require('debug')('convert');
+const asyncPool = require('tiny-async-pool');
 
 /**
  *
@@ -9,16 +10,15 @@ const debug = require('./debug');
  * @return {Promise<string[]>}
  */
 const convertToPNG = async (svgs, { size }) => {
-  for (let index = 0; index < svgs.length; index += 1) {
-    const { svg, name } = svgs[index];
+  await asyncPool(5, svgs, ({ svg, name }) => {
     const buffer = Buffer.from(svg);
     const out = `./${ name }.png`;
     debug('converting', name);
-    await sharp(buffer) // eslint-disable-line no-await-in-loop
+    return sharp(buffer)
       .resize(size, size)
       .png()
       .toFile(path.resolve(out));
-  }
+  });
 
   return svgs.map(({ name }) => name);
 };
