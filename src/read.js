@@ -13,7 +13,7 @@ const read = (path) => {
       if (err) {
         return reject(err);
       }
-      resolve(data);
+      return resolve(data);
     });
   });
 };
